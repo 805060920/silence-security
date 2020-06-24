@@ -1,17 +1,35 @@
 package com.silence.app.security.controller;
 
-import com.silence.app.security.entity.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.silence.app.security.entity.UserEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/orders")
 public class UserController {
 
-    @GetMapping("/get/{userId}")
-    public User getUser(){
-        return new User("小明","1234");
+    @GetMapping("/{UserEntityId}")
+    public UserEntity getUserEntity(){
+        return new UserEntity("小明","1234");
     }
+
+
+    @PostMapping
+    public void add(Collection<UserEntity> UserEntitys){
+
+    }
+
+
+    @PutMapping("{UserEntityId}")
+    public void update(){
+
+    }
+
+    @PutMapping
+    public void updateBatch(Collection<UserEntity> UserEntitys){
+
+    }
+
 
 }
