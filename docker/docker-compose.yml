@@ -1,0 +1,22 @@
+version: '2.2'
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-8.0
+    volumes:
+      - F:/volumn/mysql:/var/lib/mysql
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: 123456
+    ports:
+      - 3302:3306
+
+
+
+
+
+
